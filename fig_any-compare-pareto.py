@@ -45,6 +45,5 @@ with PdfPages("figs/any-compare-pareto.pdf") as pdfFile:
 
     plt.tight_layout(w_pad=1, h_pad=1, pad=0.5)
 
-    plt.show()
     pdfFile.savefig(fig)
     plt.close()
