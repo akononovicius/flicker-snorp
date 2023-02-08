@@ -10,7 +10,7 @@ fNs = np.array(
         "data/poiss1000000.pareto100_1000_-1.seed4859.psd.csv",
         "data/poiss1000000.pareto100_1000_-1.seed1081.psd.csv",
         "data/poiss1000000.pareto100_1000_-1.seed22675.psd.csv",
-        "data/poiss1000000.pareto100_1000_-1.seed13006.psd.csv",
+        "data/poiss1000000.pareto100_1000_-1.seed13007.psd.csv",
     ]
 )
 
