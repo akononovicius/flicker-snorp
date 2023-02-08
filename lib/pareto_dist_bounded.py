@@ -8,7 +8,7 @@ def sample(
     size: float | tuple = 1,
     rng: np.random.Generator | None = None,
 ) -> np.ndarray | float:
-    """Sample from the bounded Pareto distribution.
+    """Sample from the (un)bounded Pareto distribution.
 
     Input:
         power:
@@ -30,6 +30,12 @@ def sample(
     """
     if rng is None:
         rng = np.random.default_rng()
+
+    if high == np.inf:
+        if size == 1:
+            return (rng.pareto(power) + 1) * low
+        else:
+            return (rng.pareto(power, size=size) + 1) * low
 
     if size == 1:
         scale = high / low
