@@ -22,7 +22,8 @@ with PdfPages("figs/any-compare-pareto.pdf") as pdfFile:
     plt.xlim([3e-6, 3e0])
 
     ax = plt.gca()
-    ax.grid(visible=True, linestyle="--", dashes=(15, 15), c="#cccccc", lw=0.3)
+    ax.grid(False)
+    # ax.grid(visible=True, linestyle="--", dashes=(15, 15), c="#cccccc", lw=0.3)
     ax.get_yaxis().set_tick_params(direction="out")
     ax.get_xaxis().set_tick_params(direction="out")
     ax.set_xlabel(r"$f$")
