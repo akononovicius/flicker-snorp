@@ -7,10 +7,10 @@ plt.rc("text", usetex=True)
 
 fNs = np.array(
     [
-        "data/poiss1000000.pareto100_1000_-1.seed4859.psd.csv",
-        "data/poiss1000000.pareto100_1000_-1.seed1081.psd.csv",
-        "data/poiss1000000.pareto100_1000_-1.seed22675.psd.csv",
         "data/poiss1000000.pareto100_1000_-1.seed13007.psd.csv",
+        "data/poiss1000000.pareto100_1000_-1.seed22675.psd.csv",
+        "data/poiss1000000.pareto100_1000_-1.seed1081.psd.csv",
+        "data/poiss1000000.pareto100_1000_-1.seed4859.psd.csv",
     ]
 )
 
@@ -32,14 +32,14 @@ with PdfPages("figs/nonergodic.pdf") as pdfFile:
     ax.set_yticks([1e-5, 1e-2, 1e1, 1e4, 1e7])
 
     data = 10 ** np.loadtxt(fNs[0], delimiter=",")
-    data[:, 1] = data[:, 1]
-    plt.plot(data[4::14, 0], data[4::14, 1], "ro", lw=4)
-    data = 10 ** np.loadtxt(fNs[1], delimiter=",")
-    plt.plot(data[2::10, 0], data[2::10, 1], "g^", lw=4)
-    data = 10 ** np.loadtxt(fNs[2], delimiter=",")
-    plt.plot(data[::8, 0], data[::8, 1], "bs", lw=4)
-    data = 10 ** np.loadtxt(fNs[3], delimiter=",")
     plt.plot(data[::4, 0], data[::4, 1], "md", lw=4)
+    data = 10 ** np.loadtxt(fNs[1], delimiter=",")
+    plt.plot(data[::8, 0], data[::8, 1], "bs", lw=4)
+    data = 10 ** np.loadtxt(fNs[2], delimiter=",")
+    plt.plot(data[::10, 0], data[::10, 1], "g^", lw=4)
+    data = 10 ** np.loadtxt(fNs[3], delimiter=",")
+    plt.plot(data[::14, 0], data[::14, 1], "ro", lw=4)
+    data = 10 ** np.loadtxt(fNs[0], delimiter=",")
     plt.plot(data[:, 0], 8e-3 / data[:, 0], "k--")
 
     plt.tight_layout(w_pad=1, h_pad=1, pad=0.5)
