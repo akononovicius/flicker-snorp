@@ -125,6 +125,8 @@ def main(
     if min_freq < 0:
         min_freq = (1 / min_gap) * 10 / (2 * np.pi)
     freqs = np.logspace(np.log10(min_freq), np.log10(max_freq), n_freq)
+    freqs = np.unique(np.round(duration * freqs)) / duration  # only natural freqs
+    n_freq = len(freqs)
 
     # main simulation loop
     sim_psds = np.zeros((repeats, n_freq))
