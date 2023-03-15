@@ -13,4 +13,8 @@ corresponding figure name).
 ## References
 
 1. A. Kononovicius, B. Kaulakys. *1/f noise from the sequence of
-   non-overlapping rectangular pulses*. (Under review)
+   nonoverlapping rectangular pulses.* Physical Review E **107**: 034117
+   (2023). [doi:
+   10.1103/PhysRevE.107.034117](https://doi.org/10.1103/PhysRevE.107.034117).
+   [arXiv:2210.11792
+   [cond-mat.stat-mech]](https://arxiv.org/abs/2210.11792).
