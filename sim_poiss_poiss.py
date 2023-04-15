@@ -16,7 +16,7 @@ def main(
     n_freq: int = 100,
     archive_dir: str = "data",
     seed: int = -1,
-):
+) -> None:
     """Simulate rectangular SNORP with Poissonian durations.
 
     Input:

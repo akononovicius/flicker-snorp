@@ -185,7 +185,7 @@ def get_any_bounded_pareto_psd(
     min_gap: float,
     max_gap: float,
     power_gap: float,
-):
+) -> np.ndarray:
     """Calculate theoretical PSD for any pulses and bounded Pareto gaps.
 
     Input:

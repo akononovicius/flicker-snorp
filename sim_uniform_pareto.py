@@ -2,8 +2,8 @@ import numpy as np
 import typer
 
 from lib.pareto_dist_bounded import sample
-from lib.theory_psd import get_uniform_bounded_pareto_psd
 from lib.psd import get_snorp_psd
+from lib.theory_psd import get_uniform_bounded_pareto_psd
 
 
 def main(
@@ -20,7 +20,7 @@ def main(
     n_freq: int = 100,
     archive_dir: str = "data",
     seed: int = -1,
-):
+) -> None:
     """Simulate rectangular SNORP with uniform pulses and bounded Pareto gaps.
 
     Input:
@@ -76,10 +76,12 @@ def main(
     rng = np.random.default_rng(seed)
 
     # sample distributions
-    def sample_pulse(low=0, high=1000, size=1):
+    def sample_pulse(low: float = 0, high: float = 1000, size: int = 1) -> np.ndarray:
         return rng.uniform(low=low, high=high, size=size)
 
-    def sample_gap(power, low=1, high=1000, size=1):
+    def sample_gap(
+        power: float, low: float = 1, high: float = 1000, size: int = 1
+    ) -> np.ndarray:
         return sample(power, low=low, high=high, size=size, rng=rng)
 
     # simulation archival setup

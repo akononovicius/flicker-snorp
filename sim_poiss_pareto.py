@@ -22,7 +22,7 @@ def main(
     n_freq: int = 100,
     archive_dir: str = "data",
     seed: int = -1,
-):
+) -> None:
     """Simulate rectangular SNORP with Poissonian pulses and bounded Pareto gaps.
 
     Input:
@@ -78,7 +78,9 @@ def main(
     # sample distributions
     sample_pulse = rng.exponential
 
-    def sample_gap(power, low=1, high=1000, size=1):
+    def sample_gap(
+        power: float, low: float = 1, high: float = 1000, size: int = 1
+    ) -> np.ndarray:
         return sample(power, low=low, high=high, size=size, rng=rng)
 
     # simulation archival setup

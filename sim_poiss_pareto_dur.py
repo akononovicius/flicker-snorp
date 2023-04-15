@@ -10,27 +10,29 @@ from lib.theory_psd import (
 
 
 def simulate_duration(
-    T,
-    pulse_magnitude,
-    mean_pulse,
-    min_gap,
-    max_gap,
-    power_gap,
-    rng,
-):
+    T: float,
+    pulse_magnitude: float,
+    mean_pulse: float,
+    min_gap: float,
+    max_gap: float,
+    power_gap: float,
+    rng: np.random._generator.Generator,
+) -> tuple[np.ndarray, np.ndarray]:
     # sample distributions
     sample_pulse = rng.exponential
 
-    def sample_gap(power, low=1, high=1000, size=1):
+    def sample_gap(
+        power: float, low: float = 1, high: float = 1000, size: int = 1
+    ) -> np.ndarray:
         return sample(power, low=low, high=high, size=size, rng=rng)
 
     # main
-    t_pulse = 0
-    t_gap = 0
+    t_pulse = 0.0
+    t_gap = 0.0
     pulse_duration = []
     gap_duration = []
     while t_pulse + t_gap < T:
-        gap = sample_gap(power_gap, low=min_gap, high=max_gap)
+        gap = float(sample_gap(power_gap, low=min_gap, high=max_gap))
         pulse = sample_pulse(mean_pulse)
         if t_gap + t_pulse + gap > T:
             gap = T - t_pulse - t_gap
@@ -57,7 +59,7 @@ def main(
     n_freq: int = 100,
     archive_dir: str = "data",
     seed: int = -1,
-):
+) -> None:
     """Simulate rectangular SNORP with Poissonian pulses and bounded Pareto gaps.
 
     Input:
