@@ -1,7 +1,8 @@
 import numpy as np
 import typer
 
-from lib.psd import get_poiss_poiss_psd, get_snorp_psd
+from lib.psd import get_snorp_psd
+from lib.theory_psd import get_poiss_poiss_psd
 
 
 def main(

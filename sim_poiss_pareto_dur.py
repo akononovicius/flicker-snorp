@@ -2,8 +2,11 @@ import numpy as np
 import typer
 
 from lib.pareto_dist_bounded import sample
-from lib.psd import (get_long_poiss_bounded_pareto_psd,
-                     get_short_poiss_bounded_pareto_psd, get_snorp_psd)
+from lib.psd import get_snorp_psd
+from lib.theory_psd import (
+    get_long_poiss_bounded_pareto_psd,
+    get_short_poiss_bounded_pareto_psd,
+)
 
 
 def simulate_duration(
