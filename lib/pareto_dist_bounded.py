@@ -5,7 +5,7 @@ def sample(
     power: float,
     low: float = 1,
     high: float = 1000,
-    size: float | tuple = 1,
+    size: int | tuple = 1,
     rng: np.random.Generator | None = None,
 ) -> np.ndarray | float:
     """Sample from the (un)bounded Pareto distribution.
