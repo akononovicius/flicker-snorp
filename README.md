@@ -3,7 +3,7 @@
 This repository replicates numerical simulation conducted in [1]. Figure
 generation scripts are also included.
 
-Main runable files are "sim.sh", which conducts simulation, and "fig.sh",
+Main runable files are `sim.sh`, which conducts simulation, and `fig.sh`,
 which produces figures seen in [1]. Model specific simulation files are
 named `sim_<model>.py` (where `<model>` is usually an abbreviation of
 distributions from which pulse and gap duration are sampled). Figure
